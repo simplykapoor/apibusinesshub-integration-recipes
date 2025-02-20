@@ -3,14 +3,14 @@ pipeline {
 
 	//Configure the following environment variables before executing the Jenkins Job	
 	environment {
-		IntegrationFlowID = "IntegrationFlow1"
+		IntegrationFlowID = "Enrich_and_Transform_Music_Titles"
 		CPIHost = "${env.CPI_HOST}"
 		CPIOAuthHost = "${env.CPI_OAUTH_HOST}"
 		CPIOAuthCredentials = "${env.CPI_OAUTH_CRED}"	
-		GITRepositoryURL  = "${env.GIT_REPOSITORY_URL}"
-		GITCredentials = "${env.GIT_CRED}"
+		GITRepositoryURL  = "${env.EXTERNAL_GITHUB_REPOSITORY_URL}"
+		GITCredentials = "${env.EXTERNAL_GITHUB_CRED}"
 		GITBranch = "${env.GIT_BRANCH_NAME}"
-		GITFolder = "IntegrationContent/IntegrationArtefacts"
+		GITFolder = "Content/IntegrationArtefacts"
 		GITComment = "Integration Artefacts update from CICD pipeline"
    	}
 	
