@@ -103,7 +103,7 @@ pipeline {
           } else {
             if (env.GetEndpoint.equalsIgnoreCase("true")) {
               //Get endpoint as configured above
-	      Thread.sleep(30000);
+	      Thread.sleep(60000);
               def endpointResp = httpRequest acceptType: 'APPLICATION_JSON',
                 customHeaders: [
                   [maskValue: false, name: 'Authorization', value: env.token]
