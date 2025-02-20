@@ -7,11 +7,11 @@ pipeline {
 		CPIHost = "${env.CPI_HOST}"
 		CPIOAuthHost = "${env.CPI_OAUTH_HOST}"
 		CPIOAuthCredentials = "${env.CPI_OAUTH_CRED}"	
-		GITRepositoryURL  = "${env.EXTERNAL_GITHUB_REPOSITORY_URL}"
-		GITCredentials = "${env.EXTERNAL_GITHUB_CRED}"
-		GITBranch = "${env.EXTERNAL_GITHUB_BRANCH_NAME}"
+		GITRepositoryURL  = "${env.INTERNAL_GITHUB_REPOSITORY_URL}"
+		GITCredentials = "${env.INTERNAL_GITHUB_CRED}"
+		GITBranch = "${env.INTERNAL_GITHUB_BRANCH_NAME}"
 		GITFolder = "Content/IntegrationArtefacts"
-		GITComment = "Integration Artefacts update from CICD pipeline"
+		GITComment = "Integration Artefacts update from CICD Jenkins pipeline"
    	}
 	
 	stages {
