@@ -114,6 +114,8 @@ pipeline {
                 url: 'https://' + "${env.CPIHost}" + '/api/v1/ServiceEndpoints?$filter=Name%20eq%20\'' + "${env.IntegrationFlowID}" + '\'&$select=EntryPoints&$format=json&$expand=EntryPoints'
               def jsonEndpointObj = readJSON text: endpointResp.content;
               def endpoint = jsonEndpointObj.d.results.EntryPoints.results.Url;
+		    println(jsonEndpointObj);
+		println(endpoint);
               def size = (jsonEndpointObj.d.results.EntryPoints.results).size();
               endpointResp.close();
 			        //check if the flow has an endpoint
