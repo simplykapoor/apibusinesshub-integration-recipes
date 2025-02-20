@@ -53,7 +53,7 @@ pipeline {
 		  
 		      //check until max check counter reached or we have a final state
           while (counter < env.DeploymentCheckRetryCounter.toInteger() & continueLoop == true) {
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             counter = counter + 1;
             def statusResp = httpRequest acceptType: 'APPLICATION_JSON',
               customHeaders: [
@@ -61,7 +61,6 @@ pipeline {
               ],
               httpMode: 'GET',
               responseHandle: 'LEAVE_OPEN',
-	      validResponseCodes: '100:599',
               timeout: 30,
               url: 'https://' + "${env.CPIHost}" + '/api/v1/IntegrationRuntimeArtifacts(\'' + "${env.IntegrationFlowID}" + '\')';
             def jsonObj = readJSON text: statusResp.content;
@@ -104,6 +103,7 @@ pipeline {
           } else {
             if (env.GetEndpoint.equalsIgnoreCase("true")) {
               //Get endpoint as configured above
+	      Thread.sleep(10000);
               def endpointResp = httpRequest acceptType: 'APPLICATION_JSON',
                 customHeaders: [
                   [maskValue: false, name: 'Authorization', value: env.token]
