@@ -81,7 +81,7 @@ pipeline {
 						if (git_version.trim().equalsIgnoreCase(cpiVersion.trim())){
 							println("Versions are same, no action required");
 							//EXIT
-							currentBuild.result = 'SUCCESS';
+							currentBuild.result = 'ABORTED';
 							return
 						} else {
 							println("Versions are different");
