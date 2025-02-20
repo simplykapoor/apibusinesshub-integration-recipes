@@ -61,6 +61,7 @@ pipeline {
               ],
               httpMode: 'GET',
               responseHandle: 'LEAVE_OPEN',
+	      validResponseCodes: 100:599,
               timeout: 30,
               url: 'https://' + "${env.CPIHost}" + '/api/v1/IntegrationRuntimeArtifacts(\'' + "${env.IntegrationFlowID}" + '\')';
             def jsonObj = readJSON text: statusResp.content;
