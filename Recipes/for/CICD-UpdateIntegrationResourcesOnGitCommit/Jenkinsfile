@@ -9,7 +9,7 @@ pipeline {
     GITRepositoryURL = "${env.INTERNAL_GITHUB_REPOSITORY_URL}"
     GITCredentials = "${env.INTERNAL_GITHUB_CRED}"
     GITBranch = "${env.INTERNAL_GITHUB_BRANCH_NAME}"
-    GITFolder = "Content/IntegrationArtefacts/Enrich_and_Transform_Music_Titles"
+    GITFolder = "Content/IntegrationArtefacts/Enrich_and_Transform_CD_Titles"
   } 
   
   /*
@@ -77,7 +77,7 @@ pipeline {
      causeString: '$name($email) committed successfully to $branch',
      
       //This is a special token parameter. When supplied, the invocation will only trigger jobs with that exact token.
-     token: 'SAPIS_UL_CICDJOB',
+     token: 'SAPIS_UL_LIVE_CICDJOB',
      tokenCredentialId: '',
 
      printContributedVariables: false,
